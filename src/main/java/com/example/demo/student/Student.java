@@ -1,9 +1,7 @@
 package com.example.demo.student;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 
-import java.net.http.HttpResponse;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -44,11 +42,6 @@ public class Student {
         this.dob = dob;
     }
 
-    public Student(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
-
     public Long getId() {
         return id;
     }
@@ -83,11 +76,6 @@ public class Student {
 
     public Integer getAge() {
         return Period.between(this.dob, LocalDate.now()).getYears();
-    }
-
-    @Transactional
-    public void updateStudent() {
-
     }
 
     public void setAge(Integer age) {
