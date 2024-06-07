@@ -1,0 +1,13 @@
+services:
+  spring-db:
+    container_name: spring-db
+    restart: always
+    image: postgres:16
+    volumes:
+      - ./database:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=student
+      - POSTGRES_USER=student
+      - POSTGRES_DB=studentDb
+    ports:
+      - 5432:5432
